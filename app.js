@@ -18,6 +18,11 @@ form.addEventListener("submit", async function (e) {
 })
 
 function makeImages(shows) {
+    // Remove previously created images
+    const oldImages = document.querySelectorAll("img");
+    oldImages.forEach(img => img.remove());
+
+    // Add new images
     for (let result of shows) {
         if (result.show.image) {
             const img = document.createElement('img');
